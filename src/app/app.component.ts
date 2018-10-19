@@ -14,7 +14,7 @@ import {RemoveEvent, ChangeEvent} from "./payment/payment.component";
 })
 export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
 
-    items: PaymentModel[];
+    items: PaymentModel[] = [];
     sum: number = 0;
 
     constructor(
@@ -25,14 +25,12 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.items = this.paymentsService.getDefault();
-        this.calculateSum();
         this.paymentsService.getAll()
             .pipe(
                 takeUntil(this.destroy$),
             )
             .subscribe(items => {
-                this.items = items;
+                this.items = items || this.paymentsService.getDefault();
                 this.calculateSum();
             });
     }
@@ -45,7 +43,6 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
     }
 
     changeEvent(event: ChangeEvent) {
-        console.log(event);
         this.calculateSum();
         this.paymentsService.putAll(this.items);
     }

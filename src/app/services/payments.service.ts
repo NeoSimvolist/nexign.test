@@ -1,8 +1,9 @@
 import {of} from "rxjs/index";
-import {map} from "rxjs/operators";
 import {Injectable} from "@angular/core";
 
 import {LocalStorageService} from "ngx-webstorage";
+
+import {PaymentModel} from "../models/payment.model";
 
 @Injectable()
 export class PaymentsService {
@@ -12,10 +13,9 @@ export class PaymentsService {
     constructor(
         private localStorageService: LocalStorageService,
     ) {
-
     }
 
-    getDefault() {
+    getDefault(): PaymentModel[] {
         return [
             {
                 name: "Интернет",
@@ -36,13 +36,10 @@ export class PaymentsService {
     }
 
     getAll() {
-        return of(this.localStorageService.retrieve(PaymentsService.PAYMENTS_STORAGE_KEY))
-            .pipe(
-                map(value => value || [])
-            );
+        return of(this.localStorageService.retrieve(PaymentsService.PAYMENTS_STORAGE_KEY));
     }
 
     putAll(payments) {
-        this.localStorageService.store(PaymentsService.PAYMENTS_STORAGE_KEY, payments || []);
+        this.localStorageService.store(PaymentsService.PAYMENTS_STORAGE_KEY, payments);
     }
 }

@@ -4,7 +4,7 @@
   <app-payment [items]="items"
                (changeEvent)="changeEvent($event)"
                (removeEvent)="removeEvent($event)"></app-payment>
- 
+
   <div class="app-footer">
     Израсходовано средств: <span class="app-footer-bold">{{sum | number:'1.0'}}</span>
     <div class="app-footer-task">
