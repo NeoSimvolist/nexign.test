@@ -1,0 +1,13 @@
+<div class="payment-item-column column-name">
+  {{model?.name}}
+</div>
+
+<div class="payment-item-column column-amount">
+  {{model?.amount | number:'1.0'}}
+</div>
+
+<div *ngFor="let key of modelPaymentsKeys"
+     class="payment-item-column">
+  <mat-checkbox [checked]="model.payments[key]"
+                (change)="change($event.checked, key)"></mat-checkbox>
+</div>

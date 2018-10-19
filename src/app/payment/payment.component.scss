@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  max-width: 1000px;
+}
+.payment-container {
+  min-width: 880px;
+  min-height: 250px;
+  margin: 0 20px;
+}
+.payment-item {
+  display: flex;
+  flex-direction: row;
+}
+.payment-item-header {
+  margin-bottom: 30px;
+}
+.payment-item-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 30px;
+
+  &.column-name {
+    width: 140px;
+    max-width: 140px;
+    min-width: 140px;
+    justify-content: flex-start;
+  }
+
+  &.column-amount {
+    width: 100px;
+    max-width: 100px;
+    min-width: 100px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  &.column-remove {
+    width: 60px;
+    max-width: 60px;
+    min-width: 60px;
+  }
+
+  &.column-month {
+  }
+}

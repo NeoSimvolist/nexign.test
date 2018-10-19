@@ -1,0 +1,44 @@
+<form [formGroup]="form"
+      (submit)="addSubmit()">
+
+  <div class="form-control">
+    <mat-form-field>
+      <input matInput
+             formControlName="name"
+             placeholder="Наименование платежа*">
+      <mat-error *ngIf="nameControl.hasError('required')">
+        Обязательное поле
+      </mat-error>
+      <mat-error *ngIf="nameControl.hasError('minlength')">
+        Минимум 5 символов
+      </mat-error>
+      <mat-error *ngIf="nameControl.hasError('maxlength')">
+        Максимум 40 символов
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-control">
+    <mat-form-field>
+      <input matInput
+             formControlName="amount"
+             placeholder="Стоимость*">
+      <mat-error *ngIf="amountControl.hasError('required')">
+        Обязательное поле
+      </mat-error>
+      <mat-error *ngIf="amountControl.hasError('min')">
+        Должно быть больше 0
+      </mat-error>
+      <mat-error *ngIf="amountControl.hasError('pattern')">
+        Только целое число
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-control">
+    <button mat-raised-button
+            [disabled]="form.invalid || form.pristine"
+            color="primary">Добавить
+    </button>
+  </div>
+</form>

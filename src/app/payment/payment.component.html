@@ -1,0 +1,42 @@
+<div class="payment-container">
+  <!-- header -->
+  <div class="payment-item payment-item-header">
+
+    <div class="payment-item-column column-name">
+      Наименование
+    </div>
+
+    <div class="payment-item-column column-amount">
+      Стоимость
+    </div>
+
+    <div *ngFor="let monthName of monthNames"
+         class="payment-item-column column-month">
+      {{monthName}}
+    </div>
+
+    <div class="payment-item-column column-remove">
+      Удалить
+    </div>
+  </div>
+
+  <!-- body -->
+  <div *ngFor="let item of items; trackBy: trackByFn; let index = index"
+       class="payment-item">
+
+    <div class="payment-item-column">
+      <app-payment-item [ngModel]="item"
+                        (ngModelChange)="itemChange($event, index)"></app-payment-item>
+    </div>
+
+    <div class="payment-item-column column-remove">
+      <button mat-icon-button
+              color="warn"
+              (click)="itemRemove(index)">
+        <mat-icon aria-label="Удалить">remove_circle</mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+</div>

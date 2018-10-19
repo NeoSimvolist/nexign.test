@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.payment-item-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 30px;
+
+  &.column-name {
+    width: 140px;
+    max-width: 140px;
+    min-width: 140px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  &.column-amount {
+    width: 100px;
+    max-width: 100px;
+    min-width: 100px;
+    justify-content: flex-start;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  &.column-remove {
+    width: 60px;
+    max-width: 60px;
+    min-width: 60px;
+  }
+}
