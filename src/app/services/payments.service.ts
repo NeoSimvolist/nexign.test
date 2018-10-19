@@ -18,19 +18,19 @@ export class PaymentsService {
     getDefault() {
         return [
             {
-                name: "Test",
-                amount: 1000.5,
-                payments: [false, false, false, false, false, false, false, false, false, false, false, false],
+                name: "Интернет",
+                amount: 1000,
+                payments: [true, true, false, false, false, false, false, false, false, false, false, false],
             },
             {
-                name: "Магнит",
-                amount: 4000.5,
-                payments: [false, false, false, false, false, false, false, false, false, false, false, false],
+                name: "Домашний телефон",
+                amount: 4000,
+                payments: [true, true, true, false, false, false, false, false, false, false, false, false],
             },
             {
-                name: "Арбуз",
-                amount: 160.5,
-                payments: [false, false, false, false, false, false, false, false, false, false, false, false],
+                name: "Мобильный телефон",
+                amount: 160,
+                payments: [false, false, false, false, false, false, false, true, true, false, false, false],
             },
         ];
     }
