@@ -21,7 +21,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "task.docx"
+              "src/task.docx"
             ],
             "styles": [
               "src/styles.scss"
