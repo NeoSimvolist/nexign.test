@@ -15,9 +15,6 @@ export class PaymentsService {
     ) {
     }
 
-    /**
-     * do not change. used in tests
-     */
     getDefault(): PaymentModel[] {
         return [
             {
