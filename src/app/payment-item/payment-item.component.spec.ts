@@ -1,25 +1,39 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from "@angular/core/testing";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
-import { PaymentItemComponent } from './payment-item.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatIconModule} from "@angular/material/icon";
 
-describe('PaymentItemComponent', () => {
-  let component: PaymentItemComponent;
-  let fixture: ComponentFixture<PaymentItemComponent>;
+import {PaymentItemComponent} from "./payment-item.component";
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PaymentItemComponent ]
-    })
-    .compileComponents();
-  }));
+describe("PaymentItemComponent", () => {
+    let component: PaymentItemComponent;
+    let fixture: ComponentFixture<PaymentItemComponent>;
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PaymentItemComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                PaymentItemComponent,
+            ],
+            imports: [
+                FormsModule,
+                ReactiveFormsModule,
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+                MatButtonModule,
+                MatCheckboxModule,
+                MatIconModule,
+            ],
+        }).compileComponents();
+    }));
+
+    beforeEach(() => {
+        fixture = TestBed.createComponent(PaymentItemComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });
