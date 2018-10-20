@@ -76,13 +76,17 @@ describe("AppComponent", () => {
                 },
             ],
         }).compileComponents();
+    }));
 
+    beforeEach(async(() => {
         fixture = TestBed.createComponent(AppComponent);
         component = fixture.debugElement.componentInstance;
     }));
+
     it("created", async(() => {
         expect(component).toBeDefined();
     }));
+
     it("calculated sum is correct", async(() => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
