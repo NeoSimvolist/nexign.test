@@ -22,7 +22,7 @@ describe("PaymentComponent", () => {
             ],
         }).compileComponents();
     }));
-    it("should create the app", async(() => {
+    it("created", async(() => {
         const fixture = TestBed.createComponent(PaymentComponent);
         const component = fixture.debugElement.componentInstance;
         expect(component).toBeTruthy();

@@ -33,7 +33,7 @@ describe("PaymentItemComponent", () => {
         fixture.detectChanges();
     });
 
-    it("should create", () => {
+    it("created", () => {
         expect(component).toBeTruthy();
     });
 });

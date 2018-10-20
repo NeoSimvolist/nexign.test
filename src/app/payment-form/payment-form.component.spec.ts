@@ -21,7 +21,7 @@ describe("PaymentFormComponent", () => {
             ],
         }).compileComponents();
     }));
-    it("should create the app", async(() => {
+    it("created", async(() => {
         const fixture = TestBed.createComponent(PaymentFormComponent);
         const component = fixture.debugElement.componentInstance;
         expect(component).toBeTruthy();
