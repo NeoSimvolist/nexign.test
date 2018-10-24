@@ -2,7 +2,7 @@ import {Component, Input, Output, EventEmitter} from "@angular/core";
 
 import {PaymentModel} from "../models/payment.model";
 import {BaseComponent} from "../classes/base-component";
-import {MONTHS_RUS} from "../classes/months";
+import {PaymentsService} from "../services/payments.service";
 
 export interface RemoveEvent {
     index: number;
@@ -29,8 +29,14 @@ export class PaymentComponent extends BaseComponent {
     @Output()
     changeEvent = new EventEmitter<ChangeEvent>();
 
+    constructor(
+        private paymentsService: PaymentsService,
+    ) {
+        super();
+    }
+
     get monthNames() {
-        return MONTHS_RUS;
+        return this.paymentsService.monthNames;
     }
 
     itemChange(model: PaymentModel, index: number) {

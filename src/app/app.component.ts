@@ -1,3 +1,5 @@
+import * as moment from "moment";
+
 import {takeUntil} from "rxjs/internal/operators";
 import {Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy} from "@angular/core";
 
@@ -54,14 +56,6 @@ export class AppComponent extends BaseComponent implements OnInit, OnDestroy {
     }
 
     private calculateSum() {
-        let sum = 0;
-        for (const item of this.items) {
-            for (const key of Object.keys(item.payments)) {
-                if (item.payments[key]) {
-                    sum += parseFloat(String(item.amount));
-                }
-            }
-        }
-        this.sum = sum;
+        this.sum = PaymentsService.calculateSum(this.items);
     }
 }

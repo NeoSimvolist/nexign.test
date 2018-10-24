@@ -21,7 +21,7 @@ import {PaymentComponent} from "./payment/payment.component";
 class PaymentsService extends PaymentsServiceBase {
     /**
      * changing value for independent testing
-     * the amount should be 18,480
+     * the amount should be 18,336.00
      */
     getDefault(): PaymentModel[] {
         return [
@@ -90,6 +90,6 @@ describe("AppComponent", () => {
     it("calculated sum is correct", async(() => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector(".app-footer-sum").textContent).toEqual("18,480");
+        expect(compiled.querySelector(".app-footer-sum").textContent).toEqual("18,336.00");
     }));
 });

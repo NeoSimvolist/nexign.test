@@ -4,6 +4,9 @@ import {FormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatIconModule} from "@angular/material/icon";
 
+import {Ng2Webstorage} from "ngx-webstorage";
+
+import {PaymentsService} from "../services/payments.service";
 import {PaymentItemComponent} from "../payment-item/payment-item.component";
 import {PaymentComponent} from "./payment.component";
 
@@ -19,6 +22,11 @@ describe("PaymentComponent", () => {
 
                 MatCheckboxModule,
                 MatIconModule,
+
+                Ng2Webstorage,
+            ],
+            providers: [
+                PaymentsService,
             ],
         }).compileComponents();
     }));
