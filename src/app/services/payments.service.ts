@@ -31,7 +31,7 @@ export class PaymentsService {
                 }
             }
         }
-        return sum;
+        return parseFloat(sum.toFixed(2));
     }
 
     static getMonthWeightsOfYear(year: number = null) {

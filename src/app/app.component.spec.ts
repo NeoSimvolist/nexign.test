@@ -48,6 +48,7 @@ describe("AppComponent", () => {
 
     let component: AppComponent;
     let fixture: ComponentFixture<AppComponent>;
+    let paymentsService: PaymentsService;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -76,6 +77,7 @@ describe("AppComponent", () => {
                 },
             ],
         }).compileComponents();
+        paymentsService = TestBed.get(PaymentsServiceBase);
     }));
 
     beforeEach(async(() => {
@@ -90,6 +92,10 @@ describe("AppComponent", () => {
     it("calculated sum is correct", async(() => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector(".app-footer-sum").textContent).toEqual("18,336.00");
+
+        const sum = PaymentsService.calculateSum(paymentsService.getDefault());
+        const sumTest = parseFloat(compiled.querySelector(".app-footer-sum").textContent.replace(",", "")); 
+
+        expect(sumTest).toEqual(sum);
     }));
 });
